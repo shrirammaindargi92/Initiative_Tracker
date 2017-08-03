@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div class="sub-nav clearfix breadcrumb nav nav-tabs subBar">
+    <ul class="nav navbar-nav">
+        <li ui-sref-active="active" ng-class="{'disabled':true}">
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Basic" shape="circle" class = "disableLink">Basic</a>
+        </li>
+        <li ui-sref-active="active" ng-class="{'disabled':true}" >
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Advanced"class = "disableLink">Advanced</a>
+        </li>
+        <li ui-sref-active="active" ng-class="{'disabled':true}">
+            <a ui-sref="App.MyInitiative.AddNewInitiative.Preview" class = "disableLink">Preview</a>
+        </li>
+    </ul>
+</div>
+<div ui-view></div>

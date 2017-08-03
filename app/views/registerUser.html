@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div ng-controller = "RegisterUserController as ctrl">
+<div id="mainEdit">
+    <div id="firstEdit">
+    <form class="editForm" name="registerForm">
+         <label ><h1>Register yourself</h1></label>
+    <div class="row col-md-12">
+        <div class="row col-md-10">
+            <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable>First Name:</lable>
+                 <input type="text" class="form-control " id="fName" placeholder="First Name" required name ="fName" ng-model="ctrl.user.firstName">
+                  </div>
+                  <div class="col-lg-6">
+                      <lable>Last Name:</lable>
+                  <input type="text" class="form-control" id="lName" placeholder="Last Name" required name ="lName" ng-model="ctrl.user.lastName"><br>
+                </div>
+              </div>
+              <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable>Contact No.:</lable>
+                <input type="tel" class="form-control" id="contactNo" placeholder="Contact No." required name ="contactNo" ng-model="ctrl.user.contactNo">
+                  </div>
+                  <div class="col-lg-6">
+                    <lable> Username:</lable>
+                 <input type="email" class="form-control" id="username" placeholder="username as your e-mail" required name ="username" ng-model="ctrl.user.username"><br>
+                  </div>
+              </div>
+        
+        <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                   <lable> Password:</lable>
+                  <input type="password" class="form-control" id="password" placeholder="password" required name ="password" ng-model="ctrl.user.password"><br>
+                  </div>
+                  <div class="col-lg-6">
+                      <lable>Confirm Password:</lable>
+                  <input type="password" class="form-control" id="confirmPassword" placeholder="Retype your password" required name ="confirmPassword" ng-model="ctrl.user.confirmPassword"><br>
+                </div>
+              </div>
+        
+        
+        <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                      <lable>Address:</lable>
+                <textarea class=" form-control" id="address" placeholder="Address" required name ="address" ng-model="ctrl.user.address" required></textarea>
+                   <br>
+                </div>
+                   
+        </div>
+        </div>
+        <div class="col-md-2">
+            <img ng-src="{{ctrl.user.imageSrc}}" class="img-responsive img-circle" id="imageid"accept="image/*" /><br/>
+            <input type="file" ng-model="ctrl.filename" valid-file name="file" ng-file-select="onFileSelect($files)" required>
+                    <i >Choose profile picture</i>
+        </div>
+       
+    </div>
+         <button type="submit" class="btn btn-success pull-right" ng-click="ctrl.registerUser()" ng-disabled = "registerForm.$invalid">Signup <span class="glyphicon glyphicon-chevron-right"></button>
+         <a ui-sref = "Home" class="btn btn-success pull-left"><span class="glyphicon glyphicon-chevron-left"></span> to Home</a>
+    </form>
+</div>
+    </div>
+<div id="firstEdit" class="futureBlock">
+        <div   class="text-center">
+            This section is for future use. :)
+        </div>
+</div>
+
+
+
+</div>
+    

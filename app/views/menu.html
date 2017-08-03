@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="styles/css/main.min.css">
+<link rel="stylesheet" href="styles/sccs/main/tab.css">
+<header ng-controller="MainController as MainCtrl">
+    <div class="navbar primary-nav" ng-init="navbarCollapsed=false" >
+        <div class="container-fluid">
+            <div class="navbar-header row">
+                <div class="navbar-header">
+                  <a class="navbar-brand" ui-sref="App.UsersInitiative" ng-show="MainCtrl.user.role=='user'">
+                    <img alt="Brand" src="images/initiativeTracker.PNG" class="img-circle">
+                  </a>
+                    <a class="navbar-brand" ui-sref="App.AllInitiative" ng-show="MainCtrl.user.role=='administrator'">
+                    <img alt="Brand" src="images/initiativeTracker.PNG" class="img-circle">
+                  </a>
+                </div>
+                <!-- /.navbar-brand -->
+                <button data-toggle="collapse" data-target="#menu" class="navbar-toggle burger-button {{!navbarCollapsed? 'showMenu' : ''}}" ng-click="navbarCollapsed=!navbarCollapsed">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- /.navbar-header -->
+            <div id="menu" class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
+                <div class="primary-seperate clearfix">
+                    <!-- /.col-md-5 col-md-offset-1 -->
+                    <div class="pull-right">
+                        <span class=" navbar-right navbar-text navbar-nav">
+                            <span uib-dropdown class="profile pull-right">
+                                <a uib-dropdown-toggle>
+                                    <span class="welcome-text">Welcome | </span>
+                                    <span class="user-name-container">
+                                        <span class="user-name"> {{MainCtrl.user.firstName}}
+                                            {{MainCtrl.user.lastName}}</span>
+                                    </span>
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    <!--<img ng-src="{{MainCtrl.user.imageSrc}}" class="img-responsive img-circle profileImage pull-right" style=" width: 12%;
+    height: 20%;
+    display: inline-block;" id="imageid"accept="image/*" />-->
+                                     <br/>
+                                </a>
+                                <ul class="dropdown-menu" uib-dropdown-menu>
+                                    <li>
+                                        <a href ng-click="MainCtrl.editProfile()">Edit Profile<span class="fa fa-pencil-square-o pull-right" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href ng-click="MainCtrl.editProfile()">Setting<span class="glyphicon glyphicon-cog pull-right"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href ng-click="MainCtrl.logout()">Logout<span class="glyphicon glyphicon-log-out pull-right"></span></a>
+                                    </li>
+                                </ul>
+                            </span>
+                        </span>
+                    </div>
+                    <!-- /.user-info -->
+                    <div>
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active" ng-show="MainCtrl.user.role=='user'">
+                            <a ui-sref="App.UsersInitiative">Initiatives</a>
+                        </li>
+                        <li ui-sref-active="active"  ng-show="MainCtrl.user.role=='user'">
+                            <a ui-sref="App.MyInitiative.Dashboard">My Initiatives</a>
+                        </li>
+                         <li ui-sref-active="active" ng-show="MainCtrl.user.role=='administrator'">
+                            <a ui-sref="App.AllInitiative">All Initiatives</a>
+                        </li>
+                         <li ui-sref-active="active" ng-show="MainCtrl.user.role=='administrator'">
+                            <a ui-sref="App.Users">Users</a>
+                        </li>
+                    </ul>
+                </div>  
+                </div>
+               
+            </div>
+            <!-- /#menu -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar -->
+</header>
+<div ui-view></div>
+
+<footer style="background-color:#b2dba1; position:fixed; bottom:0px; left:0px; right:0px;">
+    <div class="container-fluid" >
+               <lable><a href="">&copy; 2017 www.initiativetracker.com</a></lable>
+            <div class="pull-right" style="margin-top:6px;">
+
+                    <a class="icons-sm fb-ic"  href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-3x social"></i></a>
+                    
+                    <a class="icons-sm tw-ic" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-3x social"> </i></a>
+                   
+                    <a class="icons-sm gplus-ic" href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus-square fa-3x social"> </i></a>
+                   
+                    <a class="icons-sm li-ic"  href="mailto:bootsnipp@gmail.com" target="_blank"><i class="fa fa-envelope-square fa-3x social"> </i></a>
+           </div>
+    </div>
+</footer>

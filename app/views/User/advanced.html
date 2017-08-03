@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+
+<div ng-controller="AdvanceController as ctrl">
+<div id="main">
+    <div id="first">
+        <form name="advanceForm">
+            <h3>Advance</h3>
+            <h4>Image of the Initiative</h4>
+            <div class=" row col-md-12">
+                <div class=" row col-md-6">
+                    <input type="file" ng-model="ctrl.filename" valid-file name="file" ng-file-select="onFileSelect($files)" required>
+                    <i ng-hide="ctrl.imageSrc">No image choosed</i>
+                 </div>
+                <div class="col-md-6">
+                    <img ng-src="{{ctrl.imageSrc}}" class="img-responsive" accept="image/*" /><br/>
+                </div>
+            </div>
+                
+                
+        <div>
+            <button  class="navigateButton pull-right btn btn-success" ng-click="ctrl.gotoNextTab()">Next</button>
+            <button class="navigateButton btn btn-success" ng-click="ctrl.gotoPreviousTab()">Back</button>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+

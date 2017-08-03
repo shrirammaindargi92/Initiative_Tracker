@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div id="mainEdit" style="margin-top:5%" ng-controller = "EditProfileController as ctrl">
+    <div id="firstEdit">
+    <form class="editForm" name="editForm">
+         <label for="initiative_photo"><h1>Edit Profile</h1></label>
+    <div class="row col-md-12">
+        <div class="row col-md-10">
+              <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable>ID:</lable>
+                <input type="text" class="form-control" id="id" placeholder="ID" required name ="id" ng-model="ctrl.user.id" disabled="disabled">
+                  </div>
+                  <div class="col-lg-6">
+                      <lable>Role:</lable>
+                   <input type="text" class=" form-control" id="role" placeholder="role" required name ="role" ng-model="ctrl.user.role" disabled="disabled"><br>
+                </div>
+              </div>
+        
+            <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable>First Name:</lable>
+                 <input type="text" class="form-control " id="fName" placeholder="fName" required name ="fName" ng-model="ctrl.user.firstName">
+                  </div>
+                  <div class="col-lg-6">
+                      <lable>Last Name:</lable>
+                  <input type="text" class="form-control" id="lName" placeholder="lName" required name ="lName" ng-model="ctrl.user.lastName"><br>
+                </div>
+              </div>
+        
+        <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable> Username:</lable>
+                 <input type="text" class="form-control" id="username" placeholder="username" required name ="username" ng-model="ctrl.user.username">
+                  </div>
+                  <div class="col-lg-6">
+                      <lable> Password:</lable>
+                  <input type="password" class="form-control" id="password" placeholder="password" required name ="password" ng-model="ctrl.user.password"><br>
+                </div>
+              </div>
+        
+        
+        <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                    <lable> Status:</lable>
+                  <input type="text" class="form-control" id="status" placeholder="status" required name ="status" ng-model="ctrl.user.status" disabled="disabled">
+                  </div>
+                  <div class="col-lg-6">
+                    <lable>Contact No.:</lable>
+                <input type="tel" class="form-control" id="contactNo" placeholder="Contact No." required name ="contactNo" ng-model="ctrl.user.contactNo">
+                  </div>
+        </div>
+        <div class=" row col-lg-12">
+                  <div class="col-lg-6 row">
+                      <lable>Address:</lable>
+                <textarea class=" form-control" id="address" placeholder="Address" required name ="address" ng-model="ctrl.user.address" required></textarea>
+                   <br>
+                </div>
+                   
+        </div>
+        </div>
+        <div class="col-md-2">
+            <img ng-src="{{ctrl.user.imageSrc}}" class="img-responsive img-circle" id="imageid"accept="image/*" /><br/>
+            <input type="file" ng-model="ctrl.filename" valid-file name="file" ng-file-select="onFileSelect($files)" required>
+                    <i >Choose new profile picture</i>
+        
+        </div>
+       
+    </div>
+         <button type="submit" class="btn btn-success pull-right" ng-click="ctrl.update(ctrl.user)" ng-disabled="editForm.$invalid&& editForm.$pristine||editForm.$pristine">Update</button>
+    </form>
+</div>
+    </div>

@@ -1,0 +1,43 @@
+
+
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+<div ng-controller="PreviewController as ctrl">
+        <div id="main">
+            <div id = "first">
+                <form name="basicForm">
+                    <h3>Preview</h3>
+                    <h4>Please confirm all entries.</h4>
+                    <div class="row form-group col-md-12">
+                        <div class="col-md-8">
+                            <dl>
+                                <dt><label>Title :</label></dt>
+                                    <dd>{{ctrl.newInitiative.title}}</dd>
+                                <dt><label>Description :</label></dt>
+                                    <dd>{{ctrl.newInitiative.desc}}</dd>
+                            </dl>
+                          <hr/>
+                        </div>
+                        <div class="col-md-4" style="height:220px">
+                            <img ng-src="{{ctrl.newInitiative.img}}" style="height:90%" alt="initiative image" class="img-responsive">
+                              
+                        </div>
+                        <div class="col-md-4">
+                            <hr/>
+                        </div>
+                    <div class="col-md-12">
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-success pull-left" ng-click="ctrl.gotoPreviousTab()">Back</button>
+                        </div>
+                         <div class="row pull-right">
+                            <button type="submit" class="btn btn-danger" ng-click="ctrl.cancel()">Cancel</button>
+                            <button type="submit" class="btn btn-success" ng-click="ctrl.share()">Share</button>
+                        </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+  
+
+

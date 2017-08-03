@@ -1,0 +1,212 @@
+<link rel="stylesheet" href="styles/css/home.css">
+<link rel="stylesheet" href="styles/css/main.min.css">
+<link rel="stylesheet" href="styles/scss/main/tab.css">
+
+<div  ng-controller="HomeController as HomeCtrl">
+    <div class="col-md-12">
+    <header >
+    <div class="navbar primary-nav navbar-fixed-top" ng-init="navbarCollapsed=false"  >
+        <div class="container-fluid" style="background-color: white">
+            <div class="navbar-header row">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ui-sref="Home">
+                    <img alt="Brand" src="images/initiativeTracker.PNG" class="img-circle" style="size: 500px;">
+                    <h3>Initiative Tracker</h3>
+                  </a>
+                </div>
+                <!-- /.navbar-brand -->
+                <button data-toggle="collapse" data-target="#menu" class="navbar-toggle burger-button {{!navbarCollapsed? 'showMenu' : ''}}" ng-click="navbarCollapsed=!navbarCollapsed">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- /.navbar-header -->
+            <div id="menu" class="collapse navbar-collapse pull-right" uib-collapse="navbarCollapsed">
+                <div class="primary-seperate clearfix">
+                    <div>
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active" >
+                            <a ui-sref="Login">Login</a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="RegisterUser">Signup</a>
+                        </li>
+                         <li ui-sref-active="active">
+                           <a ng-click="HomeCtrl.scrollTo('meetUsDiv')">Write Us</a>
+                        </li>
+                         <li ui-sref-active="active">
+                            <a ui-sref="RegisterUser">Community</a>
+                        </li>
+                    </ul>
+                </div>  
+                </div>
+               
+            </div>
+            <!-- /#menu -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.navbar -->
+</header>
+    <hr>
+   <div class="carousel slide" data-ride="carousel" id="carousel-example-generic" style="height: 300px;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img ng-src="../../images/CGHS.jpg" class="img-responsive"/>
+                            </div>
+                            <div class="item">
+                                <img ng-src="../../images/Deen-Dayal-Upadhyaya-Gram-Jyoti-Yojna.jpg" class="img-responsive" />
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="carousel-control left" href="#Home" role = "button" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="carousel-control right" href="#Home" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+    </div>
+</div>
+    
+    <h1 class="text-center">Our Initiatives</h1>
+    <hr>
+  <div class="row margin_left_20">
+    <div class="col-sm-3 col-md-3 thumbnail_decor container"  ng-repeat="initiative in HomeCtrl.initiatives">
+        <div class="thumbnail">
+            <img src="{{initiative.img}}" alt="..." class="img-responsive img-circle">
+            <div class="caption center center">
+                <h3>{{initiative.title}}</h3>
+                <p>{{initiative.desc}}</p>
+            </div>
+            <div class="middle">
+                <div class="text"><a ui-sref ="Login" class="btn btn-primary" role="button">Login and Explore</a></div>
+             </div>
+        </div>
+    </div>
+</div>
+    <hr>
+    <h1 class="text-center">Initiative Tracker @ a glance</h1>
+    <hr>
+    <div style="max-height: 40vh;">    
+        <div class="embed-responsive embed-responsive-4by3">
+            <video class="embed-responsive-item video" controls>
+                    <source src="../../images/pass-countdown.ogg" >
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div id="meetUsDiv"></div>
+    <hr>
+    <div>
+        <div id="mainEdit">
+            <div id="firstEdit">
+                <form class="editForm" name="queryForm">
+                    <label ><h1>Leave a Message for us</h1></label>
+                        <div class="row col-md-12">
+                            <div class="row col-md-12">
+                                    <div class=" row col-lg-12">
+                                        <lable>Your Name</lable>
+                                    <input type="text" class="form-control " id="guestName" placeholder="Your Name" required name ="guestName" ng-model="HomeCtrl.guest.guestName"><br>
+                                </div>
+                                    <div class=" row col-lg-12">
+                                    <lable> E-mail:</lable>
+                                    <input type="email" class="form-control" id="guestEmail" placeholder="Your e-mail" required name ="guestEmail" ng-model="HomeCtrl.guest.guestEmail"><br>
+                                </div>
+                                    <div class=" row col-lg-12">
+                                            <lable>Address:</lable>
+                                            <textarea class=" form-control" id="guestQuery" placeholder="Type your query here..." required name ="guestQuery" ng-model="ctrl.guest.guestQuery" rows="7"></textarea>
+                                    </div>
+                                    <div class=" row col-lg-12">
+                                        <button type="submit" class="btn btn-success form-control" ng-click="ctrl.postQuesy()" ng-disabled = "queryForm.$invalid"><strong>Send</strong</button>
+                                    </div>
+                            </div>
+                        </div>
+                </form> 
+            </div>
+        </div>
+ </div>
+<div class="backGroundColor linkDiv">
+            <div class="col-md-12 row footerDetails">
+                <div class="col-md-2 row">
+                    <div class="row col-md-6">
+                        <h5>Get to know us</h5>
+                        <a>About us</a><br>
+                        <a>Press Releases</a>
+                        <a>Careers</a>
+                    </div>
+                </div>
+                <div class="col-md-2 row">
+                    <h5> Our Services</h5>
+                    <div class="row col-md-10">
+                        <a>Explore with own initiatives</a><br>
+                        <a>Invite same minded people</a>
+                        <a>Careers</a>
+                    </div>
+                    </div>
+                <div class="col-md-2 row">
+                    <h5>Let us help you.</h5>
+                    <div class="row col-md-10">
+                        <a>Your account</a><br>
+                        <a>Help</a><br>
+                        <a>Initiative Tracker assistence</a>
+                    </div>
+                    </div>
+                <div class="col-md-2 row">
+                    <h5>Connect with us.</h5>
+                    <div class="row col-md-6">
+                        <a>Facebook</a><br>
+                        <a>Twiter</a>
+                        <a>Instagram</a>
+                    </div>
+                    </div>
+                <div class="col-md-2 row">
+                    <h5>Make Money with us.</h5>
+                    <div class="row col-md-10">
+                        <a>Advertise Your Products</a><br>
+                        <a>Become an Author</a><br>
+                        <a>Careers</a>
+                    </div>
+                    </div>
+                <div class="col-md-2 row">
+                    <h5>Know our parteners.</h5>
+                    <div class="row col-md-6">
+                        <a>About us</a><br>
+                        <a>Press Releases</a>
+                        <a>Careers</a>
+                    </div>
+                    </div>
+            </div>
+            <div id="firstEdit" class="futureBlock">
+                    <div class="text-center">
+                        <a  ng-click="HomeCtrl.scrollTo('carousel-example-generic')">Go to Top</a>
+                    </div>
+            </div>
+</div>
+
+    <footer class="backGroundColor footer">
+    <div class="container-fluid" >
+               <lable><a href="">&copy; 2017 www.initiativetracker.com</a></lable>
+            <div class="pull-right" style="margin-top:6px;">
+
+                    <a class="icons-sm fb-ic"  href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-square fa-3x social"></i></a>
+                    
+                    <a class="icons-sm tw-ic" href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square fa-3x social"> </i></a>
+                   
+                    <a class="icons-sm gplus-ic" href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus-square fa-3x social"> </i></a>
+                   
+                    <a class="icons-sm li-ic"  href="mailto:bootsnipp@gmail.com" target="_blank"><i class="fa fa-envelope-square fa-3x social"> </i></a>
+           </div>
+    </div>
+</footer>
+</div>
+
+    

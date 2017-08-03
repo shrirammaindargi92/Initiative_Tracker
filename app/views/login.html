@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="styles/css/login.css">
+<div  ng-controller="LoginController as LoginCtrl" class="cover">
+    <div class="row login-block" >
+        <div  class="col-md-12 wrapper">
+          <form name="userForm" class="form-container" data-ng-submit="LoginCtrl.login()" class="main-center" novalidate>
+              <div class="login-panel center-block">
+            <div class="center-block">
+              <a ui-sref="Home"><img class="login-img" src="images/initiativeTracker.PNG" alt=""></a>
+            </div>
+            <div class="center-block">
+                <h1>Initiative Tracker</h1>
+                
+            </div>
+              <div class="form-group username ">
+                  <div class="input-group form-element">
+                    <span class="input-group-addon">
+                      <img class="login-images" src="images/icons/icon_username.svg">
+                    </span>
+                    <input type="email" class="form-control" ng-model="LoginCtrl.credentials.username" placeholder="Username" id="username" required />
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group form-element">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <img class="login-images" src="images/icons/icon_password.svg">
+                  </span>
+                  <input type="password" class="form-control" ng-model="LoginCtrl.credentials.password" placeholder="Password" required/>
+                </div>
+              </div>
+              <div class="form-group">
+              <input type="submit" class="btn btn-login btn-lg login-button" id="submit" value="Log In" ng-disabled="userForm.$invalid" />
+                  
+              </div>
+              <div class="form-group pull-right">
+              <a ui-sref="ForgotPassword" class="forgotPassword">Forgot Password?</a>
+                  
+              </div>
+       
+              <div class="failedLogin form-group form-element" ng-if="(LoginCtrl.loginFailed && !LoginCtrl.blockedUser)">
+                <span class="glyphicon glyphicon glyphicon-exclamation-sign"></span>&nbsp;<span class="message">Invalid login credentials</span>
+            </div>
+                  <div class="failedLogin form-group form-element" ng-if="(LoginCtrl.blockedUser && LoginCtrl.loginFailed) || LoginCtrl.blockedUser">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;<span>User is blocked by Administrator, Please contact your adminnistrator for more details</span>
+            </div>
+                   </div>
+            </form>
+            
+      </div>
+<!--    </div>-->
+</div>
+
+</div>
+<!-- /.wrapper -->

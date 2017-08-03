@@ -1,0 +1,172 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "user",
+      "firstName": "Tejaswini",
+      "lastName": "Taylor",
+      "username": "jon@rocketmail.com",
+      "password": "jon",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 2,
+      "role": "user",
+      "firstName": "Micky",
+      "lastName": "Crasta",
+      "username": "mickyc@hotmail.com",
+      "password": "micky",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 3,
+      "role": "administrator",
+      "firstName": "Administrator",
+      "lastName": "",
+      "username": "admin@userinitiative.com",
+      "password": "admin",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 4,
+      "role": "user",
+      "firstName": "Jony",
+      "lastName": "Crasta",
+      "username": "jony@hotmail.com",
+      "password": "jony",
+      "status": "Inactive",
+      "action": "Unblock",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 5,
+      "role": "user",
+      "firstName": "Santosh",
+      "lastName": "Crasta",
+      "username": "santosh@hotmail.com",
+      "password": "santosh",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 6,
+      "role": "user",
+      "firstName": "Jake",
+      "lastName": "Crasta",
+      "username": "jake@hotmail.com",
+      "password": "jake",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 7,
+      "role": "user",
+      "firstName": "Mice",
+      "lastName": "Crasta",
+      "username": "mice@hotmail.com",
+      "password": "mice",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 8,
+      "role": "user",
+      "firstName": "Milky",
+      "lastName": "Crasta",
+      "username": "milky@hotmail.com",
+      "password": "milky",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 9,
+      "role": "user",
+      "firstName": "Nick",
+      "lastName": "Crasta",
+      "username": "nick@hotmail.com",
+      "password": "nick",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 10,
+      "role": "user",
+      "firstName": "Micky",
+      "lastName": "Crasta",
+      "username": "mickyc@hotmail.com",
+      "password": "micky",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 11,
+      "role": "user",
+      "firstName": "Amey",
+      "lastName": "Kulkarni",
+      "username": "amey@hotmail.com",
+      "password": "amey",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
+    },
+    {
+      "id": 22
+    },
+    {
+      "id": 23
+    },
+    {
+      "id": 24,
+      "role": "user",
+      "firstName": "ramu",
+      "lastName": "khandelawal",
+      "username": "mickyc@hotmail.com",
+      "password": "micky",
+      "status": "Active",
+      "action": "Block",
+      "initiativesFollowed": []
+    }
+  ]
+}
